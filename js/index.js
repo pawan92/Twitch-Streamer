@@ -1,30 +1,20 @@
 $(document).ready(function () {
- var channels= ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff"];
+ var channels= ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff","monstercat"];
 
-function makerequest(x)
-  {
-    $.getJSON('https://api.twitch.tv/kraken/streams/'+channels[x]+'?callback=?', function(data) {
-   console.log(data);
-  }
+for (var i=0; i < channels.length; i++) {
+      //var twitch = makerequest(i);
+    (function(i) {
+        $.getJSON('https://api.twitch.tv/kraken/streams/'+ channels[i] + '?callback=?',   function(data) {
+      console.log(data);
+     //$('#result').append(JSON.stringify(data.stream));
+    if (data.stream === null) {
 
-  for (var i=0;i<channels.length;i++)
-  {
-      var twitch=makerequest(i);
+        $('#result').append('<li>' + channels[i] + ' offline' + '</li>')
+      } else if (data.stream!==null) {
 
-      //$('#stream').append(channels[i]);
-    if (data.stream===null)
-      {
-
-        $('#result').append('offline');
-      }
-
-    else if (data.stream!==null)
-      {
-
-        $('#result').append('online');
+        $('#result').append('<li>' + channels[i] + ' online' + '</li>');
       }
   });
-  }
-
-
+    }(i));
+}
 });
