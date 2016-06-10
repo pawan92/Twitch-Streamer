@@ -5,7 +5,7 @@ $(document).ready(function() {
     //var twitch = makerequest(i);
     (function(i) {
       $.getJSON('https://api.twitch.tv/kraken/streams/' + channels[i] + '?callback=?', function(data) {
-        console.log(data);
+        console.log(data.stream);
         if ( data.status===422) {
           $('#result').append(
             '<li>' + channels[i] +' unavailable' + '</li>');
@@ -14,14 +14,14 @@ $(document).ready(function() {
         else if ( data.stream) {
           $('#result').append(
             '<a href="http://www.twitch.tv/' + channels[i] + ' target="_blank">' +
-            '<li class="online">' + channels[i] + ' online' + '</li>' +
-            '</a>'
+            '<li class="online">' + channels[i] + ' </a>' + data.stream.game
+            +'</li>'
           );
         } else {
           $('#result').append(
             '<a href="http://www.twitch.tv/' + channels[i] + ' target="_blank">' +
-            '<li>' + channels[i] + ' offline' + '</li>' +
-            '</a>'
+            '<li>' + channels[i] + '</a>'+ ' offline' + '</li>'
+
           );
         }
       });

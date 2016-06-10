@@ -6,18 +6,22 @@ h1 {
   margin: 5px auto;
   width: 50%;
   background-color: orange;
+  border-radius:15px;
 
 }
 body {
-  background-color: #DFE7E5;
+  background-image: url("https://img.new.livestream.com/accounts/00000000000c9e2e/c6607b6b-3fd1-44ac-9adc-6517f15e88c9.jpg");
+  background-repeat: no-repeat;
 
 }
 
 li{
   border: 1px solid black;
-  background-color: white;
+  background-color: #DADADA;
   margin: 5px 0;
   padding: 15px;
+  border-radius:15px;
+  font-weight: bold;
 }
 
 li.online {
