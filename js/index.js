@@ -12,11 +12,12 @@ $(document).ready(function() {
         }
 
         else if ( data.stream) {
-          $('#result').append(
+          $('#result').prepend(
             '<a href="http://www.twitch.tv/' + channels[i] + ' target="_blank">' +
             '<li class="online">' + channels[i] + ' </a>' + data.stream.game
             +'</li>'
           );
+
         } else {
           $('#result').append(
             '<a href="http://www.twitch.tv/' + channels[i] + ' target="_blank">' +
@@ -29,4 +30,20 @@ $(document).ready(function() {
   }
 });
 
-//https://api.twitch.tv/kraken/channels/
+ $(document).click(function online() {
+  $("#sleep").click(function(){
+        $("").hide();
+    });
+    $("#closed").click(function(){
+        $("#").hide();
+    });
+    $("#live").click(function(){
+        $("#live").show();
+    });
+});
+/*
+$("#online").click(function online() {
+  $(".hueco").show();
+  $(".sacalo").hide();
+});
+*/
