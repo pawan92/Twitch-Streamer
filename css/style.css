@@ -5,16 +5,13 @@ h1 {
   border: 1px solid black;
   margin: 5px auto;
   width: 50%;
-  background-color: orange;
+  background-color: #F1D995;
   border-radius:15px;
 
 }
 body {
-  background-image: url("https://img.new.livestream.com/accounts/00000000000c9e2e/c6607b6b-3fd1-44ac-9adc-6517f15e88c9.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
+  background-color: #8A8888;
+
 
 }
 
@@ -25,19 +22,33 @@ li{
   padding: 15px;
   border-radius:15px;
   font-weight: bold;
+  text-align:left;
 }
 
 li.online {
-  background: #5CF947;
+  background: #ADF1B2;
+
 }
+
+.toRight {
+  float: right;
+}
+
 li.unavailable{
-  background: red;
+  background: #ED7A8D;
+}
+li.offline{
+  background:#9ED1F7;
 }
 
 ul {
   list-style:none;
-  text-align: center;
   margin: 0 auto;
   width:50%;
   padding: 0;
  }
+
+button{
+  background-color:#1BAFBD;
+  font-weight:bold;
+}
